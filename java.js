@@ -1,31 +1,30 @@
 const tarefa = [];
+
+
 let linhas = '';
 
 
 
-$("form").on('submit', function (e) {
+$("form").on('submit', function (e) 
+{
     e.preventDefault();
 
     adicionarLinha();
     atualizarLista();
 
-    $("#campo").click (()=>{
-        
+    $("#campo").click(()=>
+    {
         $("#campo").css({"textDecoration":"line-through"});
-    
-    })
-
-    $("li").dbclick (()=>{
-        $("li").css({"textDecoration":"none"});
-    
     })
 })
 
 
-function adicionarLinha(){
+function adicionarLinha()
+{
     const inputTarefa = document.getElementById('input-tarefa');
 
-    if (tarefa.includes(inputTarefa.value)){
+    if (tarefa.includes(inputTarefa.value))
+    {
         alert(`A tarefa: ${inputTarefa.value} já existe.`);
 
     }
@@ -42,7 +41,8 @@ function adicionarLinha(){
 
     inputTarefa.value = '';
 }
+
 function atualizarLista(){
-    const corpoLista = $('li');
+    const corpoLista = document.querySelector('li');
     corpoLista.innerHTML = linhas;
 }
